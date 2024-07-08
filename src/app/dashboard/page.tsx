@@ -44,7 +44,7 @@ const Dashboard = () => {
     const [sizeRow, setSizeRow] = useState(5)
     const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
     const [roleSelect, setRoleSelect] = useState<string>('');
-    const searchRef = useRef(null)
+    const searchRef = useRef<HTMLInputElement>(null)
 
     useEffect(() => {
         setUsersData(users)
@@ -128,8 +128,9 @@ const Dashboard = () => {
     }
 
     const handlerBtnSearch = () => {
-        const result = handlerSearchUser(searchRef.current.value || '', roleSelect)
-        setUsersData(result)
+        const searchValue = searchRef.current ? searchRef.current.value : '';
+        const result = handlerSearchUser(searchValue, roleSelect);
+        setUsersData(result);
     }
 
     return (
