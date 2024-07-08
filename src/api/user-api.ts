@@ -1,7 +1,7 @@
 import { User } from '@/contexts/user-context';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/users'; 
+const API_BASE_URL = 'https://65ee9def08706c584d9bc036.mockapi.io/users'; 
 
 const userApi = {
   get: async () => {
